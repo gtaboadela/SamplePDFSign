@@ -1,0 +1,7 @@
+c:\users\germantaboadela\documents\visual studio 2015\Projects\SamplePDF\SamplePDF\bin\Debug\SamplePDF.exe.config
+C:\Users\GermanTaboadela\Documents\Visual Studio 2015\Projects\SamplePDF\SamplePDF\obj\Debug\SamplePDF.csprojResolveAssemblyReference.cache
+C:\Users\GermanTaboadela\Documents\Visual Studio 2015\Projects\SamplePDF\SamplePDF\bin\Debug\SamplePDF.exe
+C:\Users\GermanTaboadela\Documents\Visual Studio 2015\Projects\SamplePDF\SamplePDF\bin\Debug\SamplePDF.pdb
+C:\Users\GermanTaboadela\Documents\Visual Studio 2015\Projects\SamplePDF\SamplePDF\bin\Debug\itextsharp.dll
+C:\Users\GermanTaboadela\Documents\Visual Studio 2015\Projects\SamplePDF\SamplePDF\obj\Debug\SamplePDF.exe
+C:\Users\GermanTaboadela\Documents\Visual Studio 2015\Projects\SamplePDF\SamplePDF\obj\Debug\SamplePDF.pdb
