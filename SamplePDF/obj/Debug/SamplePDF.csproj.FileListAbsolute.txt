@@ -5,3 +5,10 @@ C:\Users\GermanTaboadela\Documents\Visual Studio 2015\Projects\SamplePDF\SampleP
 C:\Users\GermanTaboadela\Documents\Visual Studio 2015\Projects\SamplePDF\SamplePDF\bin\Debug\itextsharp.dll
 C:\Users\GermanTaboadela\Documents\Visual Studio 2015\Projects\SamplePDF\SamplePDF\obj\Debug\SamplePDF.exe
 C:\Users\GermanTaboadela\Documents\Visual Studio 2015\Projects\SamplePDF\SamplePDF\obj\Debug\SamplePDF.pdb
+C:\Git\SamplePDFSign\SamplePDF\bin\Debug\SamplePDF.exe.config
+C:\Git\SamplePDFSign\SamplePDF\obj\Debug\SamplePDF.exe
+C:\Git\SamplePDFSign\SamplePDF\obj\Debug\SamplePDF.pdb
+C:\Git\SamplePDFSign\SamplePDF\bin\Debug\SamplePDF.exe
+C:\Git\SamplePDFSign\SamplePDF\bin\Debug\SamplePDF.pdb
+C:\Git\SamplePDFSign\SamplePDF\bin\Debug\itextsharp.dll
+C:\Git\SamplePDFSign\SamplePDF\obj\Debug\SamplePDF.csprojResolveAssemblyReference.cache

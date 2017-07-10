@@ -13,31 +13,34 @@ namespace SamplePDF
         {
             string source;
             string dest;
-            Console.WriteLine("Archivo Origen:");
+            string certSerial;
+            Console.WriteLine("Source PDF File:");
             source = Console.ReadLine();
-            Console.WriteLine("Archivo destino:");
+            Console.WriteLine("Destination PDF File");
             dest = Console.ReadLine();
+            Console.WriteLine("Certificate Serial Number");
+            certSerial = Console.ReadLine();
 
             X509Store objStore = new X509Store(StoreName.My, StoreLocation.LocalMachine);
             objStore.Open(OpenFlags.ReadOnly);
             X509Certificate2Collection certs = null;
             X509Certificate2 objCert = null;
             if (objStore.Certificates != null)
-                /* foreach (X509Certificate2 objCertTemp in objStore.Certificates)
-                     if (objCertTemp.HasPrivateKey)
-                     {
-                         objCert = objCertTemp;
-                         break;
-                     }*/
-                certs = objStore.Certificates.Find(X509FindType.FindBySerialNumber, "3a 8a 6f 91 6e fa 10 27 77 1d 93 31 82 64 c7 fd", true);
-            objCert = certs[0];
+            certs = objStore.Certificates.Find(X509FindType.FindBySerialNumber, certSerial, true);
 
-            if (objCert == null)
-                Console.WriteLine("No hay certificados  con clave privada");
-            else
+            try
             {
-                PDF.SignHashed(source, dest, objCert, "Prueba", "Argentina", true);
+                objCert = certs[0];
 
+                    PDF.SignHashed(source, dest, objCert, true);
+                    Console.WriteLine("Sucess");
+                    Console.ReadLine();
+
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine("An error occurred: '{0}'", e);
+                Console.ReadLine();
             }
         }
 

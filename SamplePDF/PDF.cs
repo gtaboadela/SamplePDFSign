@@ -14,16 +14,14 @@ namespace SamplePDF
     
         public static class PDF
         {
-            /// <summary>
-            /// Firma un documento
-            /// </summary>
+           
             /// <param name="Source">Documento origen</param>
             /// <param name="Target">Documento destino</param>
             /// <param name="Certificate">Certificado a utilizar</param>
             /// <param name="Reason">Razón de la firma</param>
             /// <param name="Location">Ubicación</param>
             /// <param name="AddVisibleSign">Establece si hay que agregar la firma visible al documento</param>
-            public static void SignHashed(string Source, string Target, SysX509.X509Certificate2 Certificate, string Reason, string Location, bool AddVisibleSign)
+            public static void SignHashed(string Source, string Target, SysX509.X509Certificate2 Certificate, bool AddVisibleSign)
             {
                 X509CertificateParser objCP = new X509CertificateParser();
                 X509Certificate[] objChain = new X509Certificate[] { objCP.ReadCertificate(Certificate.RawData) };
@@ -33,21 +31,15 @@ namespace SamplePDF
                 PdfSignatureAppearance objSA = objStamper.SignatureAppearance;
 
                 if (AddVisibleSign)
-                    objSA.SetVisibleSignature(new Rectangle(100, 50, 300, 200), 1, null);
+                    objSA.SetVisibleSignature(new Rectangle(100, 100, 300, 200), 1, null);
 
                 objSA.SignDate = DateTime.Now;
                 objSA.SetCrypto(null, objChain, null, null);
-                objSA.Reason = Reason;
-                objSA.Location = Location;
                 objSA.Acro6Layers = true;
                 objSA.Render = PdfSignatureAppearance.SignatureRender.NameAndDescription;
                 PdfSignature objSignature = new PdfSignature(PdfName.ADOBE_PPKMS, PdfName.ADBE_PKCS7_SHA1);
                 objSignature.Date = new PdfDate(objSA.SignDate);
-                //objSignature.Name = PdfPKCS7.GetSubjectFields(objChain[0]).GetField("CN");
-                if (objSA.Reason != null)
-                    objSignature.Reason = objSA.Reason;
-                if (objSA.Location != null)
-                    objSignature.Location = objSA.Location;
+                objSignature.Name = PdfPKCS7.GetSubjectFields(objChain[0]).GetField("CN");
                 objSA.CryptoDictionary = objSignature;
                 int intCSize = 4000;
                 Hashtable objTable = new Hashtable();
